@@ -1,0 +1,18 @@
+ 1  Fundamentals and Syntax of the Rust Programming Language                       
+  2  Rust is an extrememly fast powerful systems language                           
+  3  Example of systems language c,c++, golang                                      
+  4  unlike java, c# and javascript                                                 
+  5  Application programming is user facing software                                
+  6  Drivers Compilers are built with systems language                              
+  7  Rust is being relevant in web development                                      
+  8  Web Aseembly or wasam is efficient byte level for web                          
+  9  If we want to get to webassembly rust is very important                        
+ 10  Rust is used to make webdev faster                                             
+ 11  If you are a webdev and wanting to run web and wasam then rust is essential    
+ 12  Advantages to rust :                                                           
+ 13     No garbage collection and we don't have to manage memory                    
+ 14     C and C++ we handle garbage collection all by ourself                       
+ 15     Rust works in different way than both of these                              
+ 16     It checks memory on demand when needed                                      
+ 17     Rust has package manager called cargo like pip or npm to manage packages and track dependencies
+ 18                                                                                 
