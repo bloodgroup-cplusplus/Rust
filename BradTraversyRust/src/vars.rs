@@ -15,6 +15,12 @@ pub fn run()
     // this is not possible 
     // age = 38;
 
+    // Define constant 
+
+    const ID: i32 = 001;
+
+    println!("ID: {}", ID);
+
 }
 
 
