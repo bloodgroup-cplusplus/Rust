@@ -1,0 +1,36 @@
+The std::env::args function works well for small programs with only a few option. 
+But once you have more and more options, it becomes cumbersome
+to parse them by hand. For example, you might have flags that have a long and short
+version, e.g., --verion and -v . Or you might have optional 
+argiments that take values ( e.g., --option vlaue).
+These types of arguments are prevalent in command-line tools, but 
+implementing them from scratch everyt time is a real pain. 
+One solutionto this is to use the clap libarry. 
+Clap stands for command-line argument parser 
+Clap can help you generate a parser for the arguments. 
+You jsust have to declare the arguemtns tou need in Rust
+code or YAML, the n clap generates the command-line-parser and a nice 
+looking --help message for you. 
+
+
+To make make life even simpler, there is a great library called
+StructOpt that combines clap and custom derive. Custom derive is a 
+feature in Rust that automatically generates a default implementation
+of a trait in Rust that automatically generates a default implementation of a 
+trait by annotating a struxt. You can define a struct containing
+the 
+arguments you want and annotate it with 
+
+
+Custom derive is a feature in Rust that automatically 
+generates a default implementation of a trait by annotating a struct
+You can define a struct containing the arguments 
+you want and annotate with 
+#[derive (StructOpt)]. A macro defined by the STructOpt 
+automatically implements the StructOpt trait for the struct. 
+This implementation will contain the necessary clap code for parsing the arguments. 
+You can get the parsed arguments in the struct format you defined
+It's much more declarative, and the parsed struct is very easy to manipulate. 
+To use StructOpt to parse your string input, you first need to 
+add it to the [dependencies] section in the Cargo.toml file :
+
