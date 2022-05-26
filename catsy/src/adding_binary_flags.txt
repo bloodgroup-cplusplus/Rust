@@ -1,0 +1,38 @@
+StructOpt makes it really easy to add binary flags, also known as toggles
+or switches. Cowsay has a flag called --dead (-d), which will change
+the cow's eye from an "o" symbol to an "x" ,  a classic, comical expression 
+of death. You can easily implement this by adding the code to the options
+sturct , as shown in the Listing 
+
+
+adding a binary flag called -- dead
+
+
+#[derive(StructOpt) ]
+
+struct Options
+{
+    message : String
+
+    #[structopt( short = "d", long = "dead") ]
+    /// make the cat appear dead 
+    dead : bool,
+}
+
+
+
+You add a field of type bool named dead. You can assign the long and
+short version of the flag by annotating the field with #[structopt(short = 
+"d", long ="dead")] . The help message will now look like this:
+
+
+FLAGS:
+
+-d , --dead Makes the cat appear dead
+-h  --help  Prints help informaton 
+-V --version Prints version informaton 
+
+To use the flag, you can modify the main() function, as shown in Listing 
+
+
+Showing Different Eyes Based on the Options ::dead flag 
