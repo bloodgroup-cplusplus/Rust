@@ -1,0 +1,39 @@
+Cowsay is a funny little command-line program originally written in Perl. 
+It takes a text message and renders an ASCII-art cow 
+Saying that message in a speech bubble. 
+Although this program seems pretty useless, it's still
+popular on unix servers, where the system admin can use it print a
+light-hearted welcome message to the user
+
+
+Cowsay has a very simple algorithm, so by suing it as an example, 
+Focus on the mechansims and tooling to build a command-line program, 
+instead of focusing on the business logic. 
+The features of Catsay which we are building (instead of cowsay) are as follows : 
+
+* Take a string as the positional argument . 
+* Take a -d/ --dead flag that makes the cat's eyes becomes xx , which is the comical expression of dead eyes
+* take a -h/ --help flag to print a help message 
+take a -v / --version flag to print the version informaton 
+Print the mage in color 
+Error handling : print any error message to STDERR.
+Piping : accept STDIN as input and allow the output to be piped to other programs 
+Run integration tests
+Package and publish the tool to crates. io 
+
+
+Creating a Binary Project 
+Although you can simply write an . rs file and compile it with rustc, handling dependencies will be a nightmare. 
+Therefore, you are going to use Cargo, Rust's package manager, to create a project and handle the 
+dependencies for you. 
+Cargo is capable of creating two kinds of projects
+binaries and libraries. 
+Libraries are used to build packages taht are intended to be used as building
+blocks for other programs. Binaries are what you are 
+trying to build in this chaper: 
+Singl eprograms that re used independenlty
+to create a binary program, 
+
+The --bin flag stands for "binary", which tells Cargo to create the package as a binary program. You can also omit the flag because its the default
+
+
