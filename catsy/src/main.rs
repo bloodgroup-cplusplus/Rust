@@ -4,7 +4,18 @@ use structopt::StructOpt;
 struct Options
 {
     #[structopt(default_value = "Meow!")]
-    message:String //[1]
+    message:String,
+    //[1]
+    #[structopt( short = "d", long = "dead")]
+    dead: bool,
+    // add a field of type bool named dead. You can assign the long and 
+    // short version of the flag by annotating the field with #[structopt(short = "d", long
+    // ="dead")]. The help message will now look like this. 
+    // FLAGS:
+    //  -d -dead Makes the cat appear dead 
+    //  -h --help Prints help informaton 
+    //  -V --version Prints version informaton 
+
 }
 
 fn main() {
@@ -39,6 +50,22 @@ fn main() {
     // args() , which parses the arguments and fills theim into the Options struct
     // and returns it. 
     // You can then access the individual fields like a normal Rust struct 
+    //
+    //
+    let eye = if options.dead { "x" } else { "o" } ; //[1] 
+    println!("{}", message);
+    println!(" \\");
+    println!(" \\");
+    println!("    /\\_/\\");
+    println!("   ({eye} {eye})", eye = eye);//[2]
+    println!("  = ( I ) = ");
+    
+    // when a flag has the bool tpe, its values are determiend by the
+    // presence of it. If the flag is not present, it willbe set to false and vice versa. 
+    //
+    if message.to_lowercase() == "woof"{
+        eprintln!(" A cat shouldn't bark like a dog. " )
+    }
     //
 }
 
