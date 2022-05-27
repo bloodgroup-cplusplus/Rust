@@ -1,4 +1,6 @@
 extern crate structopt;
+extern crate colored;
+use colored::*;
 use structopt::StructOpt;
 #[derive(StructOpt)]
 struct Options
@@ -53,11 +55,11 @@ fn main() {
     //
     //
     let eye = if options.dead { "x" } else { "o" } ; //[1] 
-    println!("{}", message);
+    println!("{}", message.bright_yellow().underline().on_purple());
     println!(" \\");
     println!(" \\");
     println!("    /\\_/\\");
-    println!("   ({eye} {eye})", eye = eye);//[2]
+    println!("   ({eye} {eye})", eye = eye.red().bold());//[2]
     println!("  = ( I ) = ");
     
     // when a flag has the bool tpe, its values are determiend by the
